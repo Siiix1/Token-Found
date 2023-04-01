@@ -1,0 +1,28 @@
+# Modules importation
+import os
+import base64
+try:
+    from colorama import Fore, init
+except:
+    os.system("py -m pip install colorama")
+    from colorama import Fore, init
+init()
+
+banner = (Fore.RED + """
+   / ____/___  __  ______  ____/ /  /_  __/___  / /_____  ____     / /_  __  __
+  / /_  / __ \/ / / / __ \/ __  /    / / / __ \/ //_/ _ \/ __ \   / __ \/ / / /
+ / __/ / /_/ / /_/ / / / / /_/ /    / / / /_/ / ,< /  __/ / / /  / /_/ / /_/ /
+/_/    \____/\__,_/_/ /_/\__,_/    /_/  \____/_/|_|\___/_/ /_/  /_.___/\__, /
+                                                                      /____/
+                   __
+  _________ ______/ /_____  _____
+ / ___/ __ `/ ___/ __/ __ \/ ___/
+/ /__/ /_/ (__  ) /_/ /_/ / /
+\___/\__,_/____/\__/\____/_/
+""" + Fore.LIGHTRED_EX)
+print(banner)
+userid = input(" [+] Victim's ID : ")
+encodedBytes = base64.b64encode(userid.encode("utf-8"))
+encodedStr = str(encodedBytes, "utf-8")
+print(f'\n [=] FIRST PART : {encodedStr}')
+os.system('pause >nul')  # Pause command in Batch (press any key to exit the code)
